@@ -1,3 +1,20 @@
+<script setup lang="ts">
+interface Product {
+  id: number
+  title: string
+  price: number
+  description: string
+  category: string
+  image: string
+  rating: object
+}
+
+const props = defineProps<{
+  product: Product
+}>()
+const { product } = toRefs(props)
+</script>
+
 <template>
   <div class="card">
     <div class="grid grid-cols-2 gap-10">
@@ -21,23 +38,6 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-interface Product {
-  id: number
-  title: string
-  price: number
-  description: string
-  category: string
-  image: string
-  rating: object
-}
-
-const props = defineProps<{
-  product: Product
-}>()
-const { product } = toRefs(props)
-</script>
 
 <style scoped>
 img {

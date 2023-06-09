@@ -1,12 +1,3 @@
-<template>
-  <NSpace>
-    <NButton @click="cb1">useMessage</NButton>
-    <NButton @click="cb2">useNotification</NButton>
-    <NButton @click="cb3">useDialog</NButton>
-    <NButton @click="cb4">useLoadingBar</NButton>
-  </NSpace>
-</template>
-
 <script lang="ts" setup>
 import { useMessage, useNotification, useDialog, useLoadingBar, NButton, NSpace } from 'naive-ui'
 
@@ -34,3 +25,12 @@ const cb4 = () => {
   }, 1000)
 }
 </script>
+
+<template>
+  <NSpace>
+    <NButton @click="cb1">useMessage</NButton>
+    <NButton @click="cb2">useNotification</NButton>
+    <NButton @click="cb3">useDialog</NButton>
+    <NButton @click="cb4">useLoadingBar</NButton>
+  </NSpace>
+</template>

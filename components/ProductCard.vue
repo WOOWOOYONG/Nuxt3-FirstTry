@@ -1,31 +1,3 @@
-<template>
-  <!-- <div class="card text-center">
-    <img :src="product.image" alt="product thumb" class="thumb" />
-    <p class="m-4 truncate font-bold text-gray-500">
-      {{ product.title }}
-    </p>
-    <NuxtLink :to="`/products/${product.id}`">
-      <p class="btn my-4">View Details</p>
-    </NuxtLink>
-  </div> -->
-
-  <n-card hoverable>
-    <template #cover>
-      <n-skeleton v-if="isLoading" text width="30%" />
-      <img v-else :src="product.image" alt="product thumb" class="thumb" />
-    </template>
-    <n-skeleton v-if="isLoading" text :repeat="3" />
-    <div v-else>
-      <p class="m-4 truncate font-bold text-gray-500">
-        {{ product.title }}
-      </p>
-      <NuxtLink :to="`/products/${product.id}`">
-        <n-button strong type="tertiary" class="my-2"> View Details </n-button>
-      </NuxtLink>
-    </div>
-  </n-card>
-</template>
-
 <script setup lang="ts">
 interface Product {
   id: number
@@ -53,6 +25,34 @@ watchEffect(() => {
   }
 })
 </script>
+
+<template>
+  <!-- <div class="card text-center">
+    <img :src="product.image" alt="product thumb" class="thumb" />
+    <p class="m-4 truncate font-bold text-gray-500">
+      {{ product.title }}
+    </p>
+    <NuxtLink :to="`/products/${product.id}`">
+      <p class="btn my-4">View Details</p>
+    </NuxtLink>
+  </div> -->
+
+  <n-card hoverable>
+    <template #cover>
+      <n-skeleton v-if="isLoading" text width="30%" />
+      <img v-else :src="product.image" alt="product thumb" class="thumb" />
+    </template>
+    <n-skeleton v-if="isLoading" text :repeat="3" />
+    <div v-else>
+      <p class="m-4 truncate font-bold text-gray-500">
+        {{ product.title }}
+      </p>
+      <NuxtLink :to="`/products/${product.id}`">
+        <n-button strong type="tertiary" class="my-2"> View Details </n-button>
+      </NuxtLink>
+    </div>
+  </n-card>
+</template>
 
 <style scoped>
 .thumb {
